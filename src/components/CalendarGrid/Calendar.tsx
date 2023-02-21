@@ -70,6 +70,11 @@ const Calendar = ({ showDetailsHandle: any}) => {
     const dateFormat = "EEE";
     const days = [];
     let startDate = startOfWeek(currentMonth, { weekStartsOn: 1 });
+    days.push(
+      <div className="col col-center">
+
+      </div>
+    )
     for (let i = 0; i < 7; i++) {
       days.push(
         <div className="col col-center" key={i}>
@@ -87,6 +92,11 @@ const Calendar = ({ showDetailsHandle: any}) => {
     let days = [];
     let day = startDate;
     let formattedDate = "";
+    days.push(
+      <div className="col cell ">
+        <a>Staff Name</a>
+      </div>
+    )
     while (day <= endDate) {
       for (let i = 0; i < 7; i++) {
         formattedDate = format(day, dateFormat);
@@ -125,29 +135,34 @@ const Calendar = ({ showDetailsHandle: any}) => {
 
   const renderStaffRows = () => {
 
-    // const body = []; 
-    // for(var j=0; j<staffRows;j++){
-    //   const rows = [];
-    //   for(var i=0;i<7;i++){
-    //     rows.push(
-    //       <div className='col cell '>
-    //         <span className="number">1</span>
-    //         <span className="bg">1</span>
-    //       </div>
-    //     )
-    //   }
-    //   body.push(
-    //     <div className="body">
-    //     <div className="row">
-    //           {rows}
-    //         </div>
-    //     </div>
-    //   )
-    // }
-    // return(    
-    //   {body}
-    // ) 
-    return Object.keys()
+    const rows = [];
+    const body = []; 
+
+     for(var j=0; j<1;j++){      
+      rows.push(
+        <div className='col cell '> 
+        <span className="number">tan ah gao {j}</span>
+        </div>
+        )
+      for(var i=0;i<7;i++){
+
+        rows.push(
+          <div className='col cell '> 
+            <span className="number">{i+1}</span>
+            </div>
+        )
+      }
+
+      
+     }
+    return(
+      <div className="body">
+        <div className="row">
+        {rows}
+        </div>
+      </div>   
+    ) 
+
   }
 
   const renderFooter = () => {
